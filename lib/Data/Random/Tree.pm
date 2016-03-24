@@ -54,6 +54,12 @@ _
             schema => ['array*', of=>['str*'], min_len=>1],
             req => 1,
             summary => 'Class(es) to use to instantiate node objects',
+            description => <<'_',
+
+Node will be created from a random pick of this list of classes. If you only
+supply one class, then all nodes will be of that class.
+
+_
         },
         code_instantiate_node => {
             schema => 'code*',
@@ -67,8 +73,13 @@ you can customize this by providing a routine to instantiate the node. The code 
 
     ($class, $level, $parent)
 
-where `$class` is the class name, `$level` is the current level (0 for root
-node, 1 for its children, and so on), `$parent` is the parent node object.
+where `$class` is the class name (your code can of course create node using any
+class you want), `$level` is the current level (0 for root node, 1 for its
+children, and so on), `$parent` is the parent node object. The code should
+return the node object.
+
+Your code need not set the node's `parent()`, connecting parent and children
+nodes will be performed by this routine.
 
 Example:
 
