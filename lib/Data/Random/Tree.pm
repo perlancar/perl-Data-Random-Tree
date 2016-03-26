@@ -13,22 +13,22 @@ our %SPEC;
 
 $SPEC{create_random_tree} = {
     v => 1.1,
-    summary => 'Create random tree',
+    summary => 'Create a random tree',
     description => <<'_',
 
 This routine creates a random tree object. You need to supply at least one node
-class. A node class is a class that at least must have these attributes:
-`parent`, `children`. See `Role::TinyCommons::Tree::Node` if you want to use a
-role to enforce this for your class.
+class. A node class is a class that must at least have these attributes:
+`parent`, and `children`. See `Role::TinyCommons::Tree::Node` if you want to
+use a role to enforce this for your class.
 
-TODO: allow specifying minimum/maximum number of objects (per-level).
+TODO: allow specifying the minimum/maximum number of objects (per-level).
 
-TODO: allow specifying minimum/maximum level.
+TODO: allow specifying the minimum/maximum level.
 
 TODO: allow varying the number of children of each node.
 
-TODO: allow customize distribution of class instances (e.g. root node up until
-level 3 should only be C1 nodes, and so on).
+TODO: allow to customize the distribution of class instances (e.g. root node
+up until level 3 should only be C1 nodes, and so on).
 
 TODO: Allow setting node attributes with random values (without having the user
 use `code_instantiate_node`).
@@ -46,7 +46,7 @@ first element of the array corresponds to the total number of children nodes
 below the root node (i.e. the total number of objects at level 1), the second
 element of the array corresponds to the total number of all that children's
 children (i.e. the total number of objects at level 2, *not* the number of
-children for each children), and so on.
+children for each child), and so on.
 
 _
         },
@@ -56,8 +56,8 @@ _
             summary => 'Class(es) to use to instantiate node objects',
             description => <<'_',
 
-Node will be created from a random pick of this list of classes. If you only
-supply one class, then all nodes will be of that class.
+The nodes will be created from a random pick of this list of classes. If you
+only supply one class, then all nodes will be of that class.
 
 _
         },
@@ -73,7 +73,7 @@ you can customize this by providing a routine to instantiate the node. The code 
 
     ($class, $level, $parent)
 
-where `$class` is the class name (your code can of course create node using any
+where `$class` is the class name (your code can naturally create nodes using any
 class you want), `$level` is the current level (0 for root node, 1 for its
 children, and so on), `$parent` is the parent node object. The code should
 return the node object.
