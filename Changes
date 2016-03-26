@@ -1,5 +1,14 @@
 Revision history for Data-Random-Tree
 
+0.03    2016-03-26 (PERLANCAR)
+
+        - [Incompatible change] Set children using $node->children(\@nodes)
+          instead of $node->children(@nodes) because the latter is incompatible
+          with most class accessors.
+
+        - Fixes.
+
+
 0.02    2016-03-24 (PERLANCAR)
 
         - No functional changes.
