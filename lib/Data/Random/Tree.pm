@@ -136,7 +136,7 @@ sub create_random_tree {
             $parents[$i]->children($children[$i]);
         }
 
-        @parents = map { @{ $children[$_] } } 0..$#parents;
+        @parents = map { @{ $children[$_] // [] } } 0..$#parents;
     }
 
     $root;
