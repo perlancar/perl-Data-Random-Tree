@@ -1,5 +1,14 @@
 Revision history for Data-Random-Tree
 
+0.04    2016-03-26 (PERLANCAR)
+
+        - No functional changes.
+
+        - [doc] Fix grammar (thanks SHLOMIF).
+
+        - Update/fix test.
+
+
 0.03    2016-03-26 (PERLANCAR)
 
         - [Incompatible change] Set children using $node->children(\@nodes)

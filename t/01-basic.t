@@ -6,7 +6,7 @@ use warnings;
 
 use Data::Random::Tree qw(create_random_tree);
 use Test::More 0.98;
-use Tree::Object;
+use Tree::Object::Hash;
 
 # sanity test
 
@@ -15,7 +15,7 @@ my $depth = 0;
 
 my $tree = create_random_tree(
     num_objects_per_level => [100, 3000, 5000, 8000, 3000, 1000, 300],
-    classes => ['Tree::Object'],
+    classes => ['Tree::Object::Hash'],
     code_instantiate_node => sub {
         my ($class, $level, $parent) = @_;
         $depth = $level if $depth < $level;
