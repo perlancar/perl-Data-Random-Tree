@@ -109,7 +109,7 @@ sub create_random_tree {
         my ($level, $parent) = @_;
         my $node;
         if ($code_inst0) {
-            $node = $code_inst0->($code_class->(), $level);
+            $node = $code_inst0->($code_class->(), $level, $parent);
         } else {
             $node = $code_class->()->new();
         }
