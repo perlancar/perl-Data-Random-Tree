@@ -1,5 +1,11 @@
 Revision history for Data-Random-Tree
 
+0.06    2016-07-03 (PERLANCAR)
+
+	- [Bugfix] Forgot to pass 'parent' argument to
+	  code_instantiate_node.
+
+
 0.05    2016-03-26 (PERLANCAR)
 
         - No functional changes.
