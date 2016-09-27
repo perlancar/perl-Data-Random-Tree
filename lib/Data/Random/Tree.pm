@@ -18,7 +18,7 @@ $SPEC{create_random_tree} = {
 
 This routine creates a random tree object. You need to supply at least one node
 class. A node class is a class that must at least have these attributes:
-`parent`, and `children`. See `Role::TinyCommons::Tree::Node` if you want to
+`parent`, and `children`. See <pm:Role::TinyCommons::Tree::Node> if you want to
 use a role to enforce this for your class.
 
 TODO: allow specifying the minimum/maximum number of objects (per-level).
